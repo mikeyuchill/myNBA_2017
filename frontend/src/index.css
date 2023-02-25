@@ -1,0 +1,338 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body {
+  margin: 0;
+}
+
+svg {}
+
+.dot {
+  fill: rgb(255, 255, 255);
+  stroke: none;
+
+}
+
+.mark {
+  fill: rgb(42, 211, 0);
+  stroke: none;
+  opacity: 1;
+}
+
+.mark.miss {
+  fill: rgb(218, 42, 42);
+}
+
+.Hex {
+  stroke: none;
+}
+
+.tick line {
+  stroke: #C0C0BB;
+}
+
+.tick text {
+  fill: #000000;
+}
+
+.bar {
+  fill: #005D6E;
+}
+
+.xlabel {
+  font-size: 2.5em;
+  fill: #635F5D;
+}
+
+.dropdown-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sl-text {
+  fill: #0c0c0c;
+}
+
+.Hex-leg {
+  fill: rgb(42, 211, 0)
+}
+
+/* table */
+.cells {
+  background-color: white;
+}
+
+.cells:nth-child(even) {
+  background-color: #cccccc;
+}
+
+thead tr:first-of-type th,
+tfoot tr:last-of-type td {
+  text-align: center;
+}
+
+th,
+tfoot td {
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 15px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 300;
+  font-size: 12px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+.table {
+  border: 1px solid #ddd;
+}
+
+.table .tr :last-child .td {
+  border-bottom: 0;
+}
+
+.table .th,
+.table .td {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+
+  overflow: hidden;
+}
+
+.table .th :last-child,
+.table .td :last-child {
+  border-right: 0;
+}
+
+.table.sticky {
+  overflow-x: scroll;
+}
+
+.table.sticky .header,
+.table.sticky .footer {
+  position: sticky;
+  z-index: 1;
+  width: fit-content;
+}
+
+.table.sticky .header {
+  top: 0;
+  box-shadow: 0px 3px 3px #ccc;
+}
+
+.table.sticky .footer {
+  bottom: 0;
+  box-shadow: 0px -3px 3px #ccc;
+}
+
+.table.sticky .body {
+  position: relative;
+  z-index: 0;
+}
+
+.table.sticky [data-sticky-td] {
+  position: sticky;
+}
+
+.table.sticky [data-sticky-last-left-td] {
+  box-shadow: 2px 0px 3px #ccc;
+}
+
+.table.sticky [data-sticky-first-right-td] {
+  box-shadow: -2px 0px 3px #ccc;
+}
+
+#shot-chart {
+  width: 100%;
+  margin-top: -16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/********SHOTCHART COURT STYLES****** */
+#shot-chart-container {
+  margin-top: -22%;
+  margin-bottom: 5%;
+}
+
+@media (min-width: 50em) {
+  #shot-chart-container {
+    margin-top: -15%;
+  }
+}
+
+@media (min-width: 55em) {
+  #shot-chart-container {
+    margin-top: -10%;
+  }
+}
+
+@media (min-width: 78em) {
+  #shot-chart-container {
+    padding-left: 1em;
+    margin-left: 33%;
+  }
+}
+
+#shot-chart-container .shot-chart {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 78em) {
+  #shot-chart-container .shot-chart {
+    margin: 0;
+  }
+}
+
+svg {
+  stroke-width: .2;
+}
+
+svg text {
+  font-size: 0.8em;
+}
+
+svg text.legend-text {
+  font-size: 0.1em;
+}
+
+svg rect {
+  stroke: black;
+  fill: none;
+}
+
+svg line {
+  stroke: black;
+  fill: none;
+}
+
+/********END SHOTCHART COURT STYLES****** */
+/********SHOT STYLES****** */
+svg circle {
+  stroke: black;
+  fill: none;
+}
+
+svg circle.shot.make {
+  fill: green;
+  stroke: white;
+  stroke-width: 0.05;
+}
+
+svg circle.shot.miss {
+  fill: red;
+  stroke: white;
+  stroke-width: 0.05;
+}
+
+path {
+  stroke: white;
+  stroke-width: 0.05;
+}
+
+path.shot {
+  stroke: white;
+  fill: none;
+  stroke-width: 0.05;
+}
+
+/********END SHOT STYLES****** */
+/********SHOT TOOLTIPS****** */
+.d3-tip {
+  line-height: 1;
+  font-weight: lighter;
+  padding: 12px;
+  background: #006886;
+  color: #fff;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: #006886;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Northward tooltips */
+.d3-tip.n:after {
+  content: "▼";
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+  text-align: center;
+}
+
+/* Eastward tooltips */
+.d3-tip.e:after {
+  content: "◀";
+  margin: -4px 0 0 0;
+  top: 50%;
+  left: -8px;
+}
+
+/* Southward tooltips */
+.d3-tip.s:after {
+  content: "▲";
+  margin: 0 0 1px 0;
+  top: -8px;
+  left: 0;
+  text-align: center;
+}
+
+/* Westward tooltips */
+.d3-tip.w:after {
+  content: "▶";
+  margin: -4px 0 0 -1px;
+  top: 50%;
+  left: 100%;
+}
+
+/********END SHOT TOOLTIPS****** */
+
+/********MAP STYLES****** */
+.map_parallel {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: stretch;
+  height: 50%;
+}
+
+.map_select {
+  /* bottom: 5%; */
+  /* flex-shrink: 0; */
+}
+
+/********END MAP STYLES****** */
